@@ -1,2 +1,37 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#101e32"><title>CCS Robotics Â· Attendance</title><link rel="stylesheet" href="./style.css"></head><body><header><div class="brand"><img class="site-logo" src="https://raw.githubusercontent.com/ccsrobotics/ccsrobotics/main/assets/carsstramsparent.png" alt="CCS Robotics logo" width="72" height="72"><div><strong>ROBOTICS</strong><small>TEAM OPERATIONS</small></div></div><span class="badge">ATTENDANCE HQ</span><button id="logout" hidden>Sign out</button></header><main><div id="notice" role="status" aria-live="polite"></div><section id="login" class="login card"><p class="eyebrow">BUILD TOGETHER. SHOW UP TOGETHER.</p><h1>Your team.<br>Your next milestone.</h1><p class="muted">Secure attendance, season rosters, and team insights for CCS Robotics administrators.</p><form id="login-form"><label>Email<input name="email" type="email" autocomplete="username" required></label><label>Password<input name="password" type="password" autocomplete="current-password" required></label><button class="primary">Sign in to workspace â†’</button></form><p class="muted">Access is limited to approved team administrators. Contact your project administrator for an account.</p></section><section id="workspace" hidden></section></main><footer>CCS ROBOTICS <span>Every meeting moves us forward.</span></footer><script type="module" src="./app.js"></script></body></html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="theme-color" content="#101e32">
+ <title>CARSS Dashboard site</title>
+ <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+ <header><div class="brand"><img class="site-logo" src="https://raw.githubusercontent.com/ccsrobotics/ccsrobotics/main/assets/carsstramsparent.png" alt="CARSS Robotics logo" width="72" height="72"><div><strong>CARSS</strong><small>Dashboard site</small></div></div><button id="theme-toggle" type="button" aria-pressed="false">Dark mode</button><button id="logout" hidden>Sign out</button></header>
+ <main>
+  <div id="notice" role="status" aria-live="polite"></div>
+  <section id="login" class="login card">
+   <h1>CARSS Dashboard site</h1>
+   <p class="muted">Sign in to manage attendance or view your child's information.</p>
+   <form id="login-form">
+    <label>Email<input name="email" type="email" autocomplete="username" required></label>
+    <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+    <button class="primary">Sign in to workspace &rarr;</button>
+   </form>
+   <details class="signup"><summary>New parent? Create an account</summary>
+    <p class="help">Create your account, confirm your email, then request access to each child. The team administrator verifies every request before you can view student information.</p>
+    <form id="signup-form">
+     <label>Parent email<input name="email" type="email" autocomplete="email" required></label>
+     <label>Create password<input name="password" type="password" autocomplete="new-password" minlength="12" required></label>
+     <p class="help">Use at least 12 characters.</p>
+     <button class="primary">Create parent account</button>
+    </form>
+   </details>
+  </section>
+  <section id="workspace" hidden></section>
+ </main>
+ <script src="./theme.js"></script>
+ <script type="module" src="./app.js"></script>
+</body>
+</html>
