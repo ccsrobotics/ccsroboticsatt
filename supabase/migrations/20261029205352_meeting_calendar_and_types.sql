@@ -1,0 +1,1 @@
+alter table public.meetings alter column title set default ''; alter table public.meetings add column meeting_type text not null default 'Regular meeting' check (meeting_type in ('Regular meeting','Gameday','Kickoff','Mandatory meeting'));

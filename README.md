@@ -39,11 +39,13 @@ The header button switches light/dark mode and stores the preference in this bro
 ## Operations
 
 1. Create a competition season, then add students or enroll existing students.
-2. Create a meeting and mark each student Present, E, or UE. Unmarked rows stay unmarked; there is no implicit absence.
+2. Open Attendance and select a date on the monthly calendar. A title is optional. Select Regular meeting, Gameday, Kickoff, or Mandatory meeting. Mark one checkbox per student: Present (P), Absent Excused (AE), or Absent Unexcused (EU). Save meeting and attendance together. Unmarked rows stay unmarked; there is no implicit absence. Saving without student marks can schedule a future meeting.
 3. Save attendance. Correcting an existing status requires a reason; database triggers record old/new values and the acting administrator.
 4. Open a student profile to review history and record formal warnings or suspensions.
-5. Export the current season's entire roster or the selected student as CSV or Excel-compatible SpreadsheetML `.xml`. Open the XML file in Excel; this is not an `.xlsx` workbook.
+5. Export the current season's entire roster or the selected student as CSV or Excel-compatible SpreadsheetML `.xml`. Status cells show P, AE, or EU, and meeting type has its own column. Open the XML file in Excel; this is not an `.xlsx` workbook. Existing database status values remain compatible with historical records and audit logs.
 6. Switch seasons for historical records. The audit tab loads the latest 200 changes across seasons. No client deletion controls are provided to preserve history.
+
+The attendance-rules PDF is available below the workspace with an embedded viewer and open/download links. The build copies `Robotics Team Attendance, Commitment, and Accountability Policy.pdf` from this repository without modifying the document. Changing the PDF does not silently change the app's calculation policy or automatically impose discipline. A blank meeting title displays its meeting type in calendars and history. Multiple existing meetings on the same date can be selected separately. If saving attendance fails after the meeting was saved, retry on that selected date; the saved meeting is reused.
 
 ## Attendance policy
 
