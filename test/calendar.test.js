@@ -13,7 +13,7 @@ test('calendar handles leap years and month/year boundaries',()=>{
  assert.match(html,/<small>Kickoff<\/small>/);
 });
 test('status codes preserve legacy records and reject conflicting choices',()=>{
- assert.equal(statusCode('Present'),'P');assert.equal(statusCode('E'),'AE');assert.equal(statusCode('UE'),'EU');assert.equal(statusCode(undefined),'Unmarked');
+ assert.equal(statusCode('Present'),'P');assert.equal(statusCode('E'),'EA');assert.equal(statusCode('UE'),'UA');assert.equal(statusCode(undefined),'Unmarked');
  assert.equal(selectedStatus([]),'');assert.equal(selectedStatus(['E']),'E');assert.throws(()=>selectedStatus(['E','Present']),/only one/);
  assert.equal(meetingLabel({title:'  ',meeting_type:'Gameday'}),'Gameday');
 });
@@ -22,6 +22,6 @@ test('new meeting allows no title, all event types, and explicit checkboxes',()=
  assert.match(html,/Meeting title \(optional\)/);assert.doesNotMatch(html,/name="title"[^>]*required/);
  for(const type of ['Gameday','Kickoff','Mandatory meeting'])assert.ok(html.includes(type));
  assert.equal((html.match(/type="checkbox"/g)||[]).length,3);
- assert.match(html,/Absent Excused/);assert.match(html,/Absent Unexcused/);
+ assert.match(html,/Excused Absence/);assert.match(html,/Unexcused Absence/);
  assert.doesNotMatch(html,/type="checkbox"[^>]*checked/);
 });
